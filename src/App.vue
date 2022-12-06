@@ -20,7 +20,7 @@
                         <v-btn color="warning" style="width: 90%; margin: 5%">Checkout</v-btn>
                       </template>
                   </v-navigation-drawer>
-                  <v-main style="height: 100vh">
+                  <v-main>
                     <router-view></router-view>
                   </v-main>
               </v-layout>
@@ -30,13 +30,9 @@
 </template>
 
 <script>
-// import MenuPage from './components/MenuPage.vue'
 
 export default {
-  name: 'App',
-  components:{
-    // MenuPage
-  }
+  name: 'App'
 }
 </script>
 
