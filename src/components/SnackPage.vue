@@ -1,29 +1,45 @@
 <template>
-    <div>
-        <div class="polaroid">
-            <img src="https://nos.jkt-1.neo.id/mcdonalds/foods/August2019/L5xeXc9T4xrtXUjqZtih.png" alt="Chicken Curry Puff" style="width:100%">
-            <div class="container">
-                <p>Chicken Curry Puff</p>
-            </div>
-        </div>
-        <div class="polaroid">
-            <img src="https://nos.jkt-1.neo.id/mcdonalds/foods/August2019/GB2nZ0H8neIAfKUBh8Wd.png" alt="Butter Croissant" style="width:100%">
-            <div class="container">
-                <p>Butter Croissant</p>
-            </div>
-        </div>
-        <div class="polaroid">
-            <img src="https://nos.jkt-1.neo.id/mcdonalds/foods/September2019/MxJjX3fZYFo32vHjzr7x.png" alt="Klepon Cake" style="width:100%">
-            <div class="container">
-                <p>Klepon Cake</p>
-            </div>
+    <div class="container">
+        <div v-for="item in Snack" :key="item.nama">
+            <router-link :to="{name: 'CheckoutPage', query: { data: JSON.stringify(item)}}">
+                <div class="polaroid">
+                    <img :src="item.gambar" style="width:100%">
+                    <div class="container">
+                        <p style="width:100%">{{item.nama}}</p>
+                    </div>
+                </div>
+            </router-link>
         </div>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'SnackPage'
+    name: 'SnackPage',
+    data() {
+        return {
+            Snack:[
+                {
+                    nama:'Chicken Curry Puff',
+                    harga: 5000,
+                    gambar: 'https://nos.jkt-1.neo.id/mcdonalds/foods/August2019/L5xeXc9T4xrtXUjqZtih.png',
+                    tipe: 'snack'
+                },
+                {
+                    nama:'Butter Corissant',
+                    harga: 8000,
+                    gambar: 'https://nos.jkt-1.neo.id/mcdonalds/foods/August2019/GB2nZ0H8neIAfKUBh8Wd.png',
+                    tipe: 'snack'
+                },
+                {
+                    nama:'Klepon Cake',
+                    harga: 6000,
+                    gambar: 'https://nos.jkt-1.neo.id/mcdonalds/foods/September2019/MxJjX3fZYFo32vHjzr7x.png',
+                    tipe: 'snack'
+                },
+            ]
+        }
+    },
 }
 </script>
 
@@ -32,12 +48,15 @@ export default {
     width: 30%;
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin-bottom: 25px;
+    margin: 25px;
+    width:20%;
+    float: left;
     }
 
     div.container {
     text-align: center;
     padding: 10px 20px;
     font-size: 3rem;
+    width: 100%;
     }
 </style>

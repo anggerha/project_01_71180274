@@ -33,6 +33,26 @@ const routes = [
         },
         props: true
     },
+    {
+      path: "/CheckoutPage",
+      name: "CheckoutPage",
+      component: function(){
+        return import('./components/CheckoutPage.vue')
+      },
+      props(route){
+        return { data: route.query.data}
+      }
+    },
+    {
+      path: "/KeranjangPage",
+      name: "KeranjangPage",
+      component: function(){
+        return import('./components/KeranjangPage.vue')
+      },
+      props(route){
+        return { keranjang: route.query.keranjang}
+      }
+    },
 ]
 
 const router = createRouter({
