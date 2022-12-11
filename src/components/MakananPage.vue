@@ -1,6 +1,7 @@
 <template>
     <div>
         <div>
+            {{Makanan.Bigmac}}
             <div class="polaroid">
                 <img src="https://s7d1.scene7.com/is/image/mcdonalds/DC_201907_0005_BigMac_832x472:product-header-desktop?wid=830&hei=458&dpr=off" alt="BigMac" style="width:100%">
                 <div class="container">
@@ -28,7 +29,15 @@ export default {
     name: 'MakananPage',
     data(){
         return {
-            
+            Makanan:[
+                {
+                    Bigmac:[
+                        {
+                            nama:'BigMac'
+                        }
+                    ]
+                }
+            ]
         }
     },
     methods: {

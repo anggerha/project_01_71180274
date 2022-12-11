@@ -5,7 +5,7 @@
               <v-layout>
                   <v-navigation-drawer permanent location="left" id="drawer">
                       <template v-slot:prepend>
-                          <router-link to="/Menu" style="text-decoration: none; color: inherit;"><v-list-item lines="two">Daftar Menu</v-list-item></router-link>
+                          <router-link to="/" style="text-decoration: none; color: inherit;"><v-list-item lines="two">Daftar Menu</v-list-item></router-link>
                       </template>
 
                       <v-divider></v-divider>
@@ -20,7 +20,7 @@
                         <v-btn color="warning" style="width: 90%; margin: 5%">Checkout</v-btn>
                       </template>
                   </v-navigation-drawer>
-                  <v-main>
+                  <v-main style="height:100%">
                     <router-view></router-view>
                   </v-main>
               </v-layout>
@@ -30,16 +30,19 @@
 </template>
 
 <script>
-
+// import MenuPage from './components/MenuPage.vue'
 export default {
-  name: 'App'
+  name: 'App',
+  components:{
+    // MenuPage
+  }
 }
 </script>
 
 <style>
-    #drawer{
-        background-color: red; 
-        color: white;
-        font-size: large;
-    }
+#drawer{
+    background-color: red; 
+    color: white;
+    font-size: large;
+}
 </style>

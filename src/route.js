@@ -2,7 +2,7 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 
 const routes = [
     {
-        path: "/Menu",
+        path: "/",
         name: "MenuPage",
         component: function(){
           return import('./components/MenuPage.vue')
